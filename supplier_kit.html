@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Details Form</title>
+    <style> 
+        form {
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 35px;
+            color: rgb(231, 215, 193);
+        } 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img1.jpg'); /* Replace 'background-image.jpg' with your image file path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 40px;
+            color: rgb(231, 215, 193);
+        }
+        p {
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 30px;
+            color: rgb(231, 215, 193);
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 40px;
+            margin-bottom: 10px;
+            border: white;
+            background-color: transparent;
+            color: #ecdfdf;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 600px;
+            margin: 350px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center; /* Center align text */
+        }
+        .btn:hover {
+            background-color: #afc8ee8c;
+        }
+        .hidden {
+            display: none;
+        }
+        .search-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h2>Enter Kit Details</h2>
+<form method="post" action="kit_details.php">
+    Kit Name: <input type="text" name="kit_name" required><br><br>
+    Kit Price: <input type="number" name="kit_price" min="0" required><br><br>
+    Supplier ID: <input type="text" name="supplier_id" required><br><br>
+    Availability: <input type="number" name="availability" min="0" required><br><br>
+
+    <label for="kit_id">Kit ID:</label>
+    <input type="text" id="kit_id" name="kit_id" readonly><br><br>
+
+    <script>
+        // Function to generate a random 5-digit number
+        function generateKitID() {
+            return Math.floor(10000 + Math.random() * 90000);
+        }
+
+        // Set the generated kit ID in the input field
+        document.getElementById('kit_id').value = generateKitID();
+    </script>
+
+    <input type="submit" value="Submit">
+</form>
+
+<br>
+
+<!-- Add the button to update kit details -->
+<form action="update_kit.html" method="get">
+    <input type="submit" value="Update Kit">
+</form>
+</div>
+</body>
+</html>
+

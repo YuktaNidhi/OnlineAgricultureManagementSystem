@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produce Upload</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('img1.jpg'); /* Replace 'background-image.jpg' with your image file path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form {
+        text-align: center;
+        font-family: 'Times New Roman';
+        font-size: 20px;
+        color: rgb(231, 215, 193);
+    }
+    .container {
+            max-width: 600px;
+            margin: 350px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center; /* Center align text */
+        }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Upload Produce Details</h2>
+<form action="produce.php" method="post">
+    <label for="farmer_id">Farmer Id:</label>
+    <input type="text" id="farmer_id" name="farmer_id" required><br><br>
+
+    <label for="produce_name">Produce Name:</label>
+    <input type="text" id="produce_name" name="produce_name" required><br><br>
+    
+    <label for="produce_type">Produce Type:</label>
+    <input type="text" id="produce_type" name="produce_type" required><br><br>
+    
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" min="0" required><br><br>
+    
+    <label for="expiry_date">Expiry Date:</label>
+    <input type="date" id="expiry_date" name="expiry_date" required><br><br>
+    
+    <label for="availability">Availability:</label>
+    <input type="number" id="availability" name="availability" min="0" required><br><br>
+    
+    <label for="produce_id">Produce ID:</label>
+    <input type="text" id="produce_id" name="produce_id" readonly><br><br>
+    
+    <script>
+        // Function to generate a random 5-digit number
+        function generateProduceID() {
+            return Math.floor(10000 + Math.random() * 90000);
+        }
+    
+        // Set the generated produce ID in the input field
+        document.getElementById('produce_id').value = generateProduceID();
+    </script>
+
+    <input type="submit" value="Upload Produce">
+</form>
+
+<br>
+
+<!-- Add the button to suggest crops -->
+<form action="suggest_crops.html" method="get">
+    <input type="hidden" id="farmer_id" name="farmer_id">
+    <input type="submit" value="Suggest Crops">
+</form>
+
+<br>
+
+<!-- Add the button to update produce -->
+<form action="update_produce.html" method="get">
+    <input type="submit" value="Update Produce">
+</form>
+</div>
+</body>
+</html>
+

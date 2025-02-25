@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search kit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img1.jpg'); /* Replace 'img1.jpg' with your image file path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 400px;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 36px;
+            color: rgb(231, 215, 193);
+            margin-bottom: 20px;
+        }
+        label {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            color: rgb(231, 215, 193);
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            border: white;
+            background-color: transparent;
+            color: #ecdfdf;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #afc8ee8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Product</h1>
+        <form id="searchForm" method="GET" action="searchkit.php">
+            <label id="searchInputLabel" for="searchInput">Enter Kit Name:</label>
+            <input type="text" id="searchInput" name="kit_name" required>
+            <input type="submit" class="btn" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

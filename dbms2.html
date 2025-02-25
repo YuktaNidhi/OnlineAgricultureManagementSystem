@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img1.jpg'); /* Replace 'background-image.jpg' with your image file path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 40px;
+            color: rgb(231, 215, 193);
+        }
+        p {
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 30px;
+            color: rgb(231, 215, 193);
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 40px;
+            margin-bottom: 10px;
+            border: white;
+            background-color: transparent;
+            color: #ecdfdf;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 600px;
+            margin: 350px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center; /* Center align text */
+        }
+        .btn:hover {
+            background-color: #afc8ee8c;
+        }
+        .hidden {
+            display: none;
+        }
+        .search-container {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showSearchOptions() {
+            document.getElementById('searchOptions').classList.remove('hidden');
+        }
+
+        function handleSearchOptionChange(option) {
+            if (option === 'product') {
+                window.location.href = 'searchproduct.php';
+            } else if (option === 'kit') {
+                window.location.href = 'searchkit.php';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>WHAT DO YOU WANT TO DO</h2><br>
+        <p><a href="produce.html" class="btn">FARMERS PRODUCE</a></p>
+        <p><a href="cust_buy.php" class="btn">CUSTOMER BUYING</a></p>
+        <p><a href="supplier_kit.html" class="btn">SUPPLIERS KIT</a></p>
+        <p><a href="farmer_buy.php" class="btn">FARMER BUYING</a></p>
+        <p><button class="btn" onclick="showSearchOptions()">SEARCH</button></p>
+        <div id="searchOptions" class="hidden">
+            <p>
+                <button class="btn" onclick="handleSearchOptionChange('product')">Search for Product</button>
+            </p>
+            <p>
+                <button class="btn" onclick="handleSearchOptionChange('kit')">Search for Kit</button>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmer Purchase Form</title>
+    <script>
+        function addkit() {
+            var kitDiv = document.getElementById('kitDiv');
+            var newkit = document.createElement('div');
+            newkit.innerHTML = `
+                <hr>
+                <h3>Kit Details</h3>
+                Kit ID: <input type="text" name="k_id[]"><br><br>
+                Quantity: <input type="text" name="quantity[]"><br><br>
+            `;
+            kitDiv.appendChild(newkit);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img1.jpg'); /* Replace 'img1.jpg' with your image file path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } 
+        form {
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 35px;
+            color: rgb(231, 215, 193);
+            background: rgba(0, 0, 0, 0.5); /* Added background for readability */
+            padding: 20px;
+            border-radius: 10px;
+            overflow-y: auto;
+            max-height: 90vh; /* Ensures form does not exceed viewport height */
+        } 
+        h2 {
+            text-align: center;
+            font-family: 'Times New Roman';
+            font-size: 45px;
+            color: rgb(231, 215, 193);
+        }
+        #productDiv hr {
+            border: 1px solid rgb(231, 215, 193);
+        }
+        /* Ensure form contents do not overflow the form container */
+        #productDiv {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Enter Purchase Details</h2>
+<div class="container">
+<form method="post" action="buy_kit.php">
+    <div id="kitDiv">
+        <h3>Kit Details</h3>
+        Kit ID: <input type="text" name="k_id[]"><br><br>
+        Quantity: <input type="text" name="quantity[]"><br><br>
+    </div>
+    <button type="button" onclick="addkit()">Add Kit</button><br><br>
+    Farmer ID: <input type="text" name="farmer_id"><br><br>
+    <input type="submit" value="Submit Purchase">
+    <input type="reset" value="Clear">
+</form>
+</div>
+
+</body>
+</html>

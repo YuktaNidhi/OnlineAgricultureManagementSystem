@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration Form</title>
+    <style>
+          body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-image: url('img1.jpg'); /* Replace 'background-image.jpg' with your image file path */
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              height: 100vh;
+              overflow: hidden;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          } 
+          form{
+              text-align: center;
+              font-family: 'Times New Roman';
+              font-size: 20px;
+              color: rgb(231, 215, 193);
+          } 
+          .container {
+            max-width: 600px;
+            margin: 350px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center; /* Center align text */
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Customer Registration Form</h2>
+    <form action="customerdetails.php" method="POST">
+        <label for="name">Name:  </label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="address">Address:  </label>
+        <textarea id="address" name="address" required></textarea><br><br>
+        
+        <label for="phone">Phone Number:  </label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        
+        <label for="email">Email:  </label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:  </label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="customer_id">Customer ID:  </label>
+        <input type="text" id="customer_id" name="customer_id" readonly><br><br>
+        
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        // Function to generate a random 5-digit number
+        function generateCustomerID() {
+            return Math.floor(10000 + Math.random() * 90000);
+        }
+
+        // Set the generated customer ID in the input field
+        document.getElementById('customer_id').value = generateCustomerID();
+    </script>
+    </div>
+</body>
+</html>
